@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="my-project-style.css">
+    <link rel="stylesheet" href="contact-style.css">
+    <link rel="stylesheet" href="about-me-style.css">
+    <link rel="stylesheet" href="terminal-style.css">
+</head>
+<body>
+
+    <!-- Weather Widget on Desktop -->
+    <div id="weather-widget">
+        <div id="city-name"></div>
+        <div id="temperature"></div>
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <div id="weather-info"></div>
+    </div>
+    <!-- Top Bar -->
+    <div id="top-bar">
+        <div class="left-section">
+            <img src="images/apple-logo.png" alt="Apple" class="apple-logo">
+            <span class="finder">Vithusha Ravirajan</span>
+            <span id="about-me-link" class="top-bar-link">About Me</span>
+        </div>
+        <div class="right-section">
+            <label class="switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider round"></span>
+            </label>
+            <div class="date-time" id="local-time"></div>
+        </div>
+    </div>
+
+    <div id="desktop">
+        <!-- Desktop Icons -->
+        <div class="desktop-icon-group">
+            <div class="desktop-icon" id="projects-icon" onclick="openMyProjectsWindow()">
+                <img src="images/projects-icon.png" alt="Projects">
+                <span>Projects</span>
+            </div>
+            <a href="documents/Resume.pdf" target="_blank" class="desktop-icon" id="resume-icon">
+                <img src="images/resume-icon.png" alt="Résumé">
+                <span>Résumé</span>
+            </a>
+            <a href="https://github.com/EpiXCoder" target="_blank" class="desktop-icon" id="github-icon">
+                <img src="images/github-icon.png" alt="Github">
+                <span>Github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/vithusharavirajan/" target="_blank" class="desktop-icon"  id="linkedin-icon">
+                <img src="images/linkedin-icon.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <div class="desktop-icon" id="cybersec-icon" >
+              <img src="images/cybersec-icon.png" alt="cyber security">
+              <span>CyberSec</span>
+            </div>
+        </div>
+
+        <!-- Dock -->
+        <div id="dock">
+            <a href="mailto: vithusha.ravirajan@gmail.com" class="dock-icon" id="email-icon">
+                <img src="images/email-icon.png" alt="Email">
+            </a>
+            <div class="dock-icon" id="contact-icon" onclick="openContactWindow()">
+             <img src="images/contact-icon.png" alt="Contact">
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Window -->
+    <div id="my-projects-window" class="my-projects-window">
+        <div class="my-projects-window-header">
+          <div class="my-projects-window-controls">
+            <div class="my-projects-window-control close" onclick="closeMyProjectsWindow()"></div>
+            <div class="my-projects-window-control minimize"></div>
+            <div class="my-projects-window-control maximize"></div>
+          </div>
+        </div>
+        <div class="my-projects-window-content">
+            <img src="images/construction-icon.png" class="construction-icon" alt="UnderConstruction">
+             <p>Project content coming soon!</p>
+        </div>
+    </div>
+
+    <!-- Contact Application Window -->
+    <div id="contact-window" class="contact-window" style="display:none;">
+      <div class="contact-window-header">
+        <div class="contact-window-controls">
+          <div class="contact-window-control close" onclick="closeContactWindow()"></div>
+          <div class="contact-window-control minimize"></div>
+          <div class="contact-window-control maximize"></div>
+        </div>
+      </div>
+      <div class="contact-window-content">
+        <div class="contact-id">
+          <div>
+            <img src="images/vithusha.png" alt="Profile Picture" class="contact-avatar">
+          </div>
+          <div>
+            <h2>Vithusha Ravirajan</h2>
+            <h3>Software Engineer</h3>
+          </div>
+        </div>    
+
+        <div class="contact-actions">
+          <button class="contact-action-btn" onclick="makeCall()">
+            <img src="images/phone-icon-s.png" alt="Call" />
+            <span>call</span>
+          </button>
+          <button class="contact-action-btn" onclick="sendMail()">
+            <img src="images/mail-icon-s.png" alt="Mail" />
+            <span>mail</span>
+          </button>
+          <button class="contact-action-btn" onclick="openWebsite()">
+            <img src="images/globe-icon-s.png" alt="Web" />
+            <span>website</span>
+          </button>
+        </div>
+        
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="contact-label">phone:</span>
+            <span class="contact-value">+1 647 456 7890</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">Email:</span>
+            <span class="contact-value">vithusha.ravirajan@gmail.com</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">website:</span>
+            <span class="contact-value"><a href="https://vithusharavirajan.me" target="_blank">vithusharavirajan.me</a></span>
+          </div>
+        </div>   
+      </div>
+    </div>
+
+    <!-- About Me Application Window -->
+    <div id="about-me-window" class="about-me-window" style="display:none;">
+      <div class="about-me-window-header">
+        <div class="about-me-window-controls">
+          <div class="about-me-window-control close" onclick="closeAboutMeWindow()"></div>
+          <div class="about-me-window-control minimize"></div>
+          <div class="about-me-window-control maximize"></div>
+        </div>
+        <span class="about-me-window-title">About Me</span>
+      </div>
+      <div class="about-me-window-content">
+            <img src="images/vithusha.png" alt="Vithusha Avatar" class="about-me-avatar">
+            <h2>Vithusha Ravirajan</h2>
+            <h3>Software Engineer</h3>
+ 
+        <div class="about-me-details">
+          <div class="about-me-detail">
+            <span class="about-me-label">About</span>
+            <span class="about-me-value">Epidemiologist turned Software Engineer currently interning at Shopify.</span>
+          </div>
+          <div class="about-me-detail">
+            <span class="about-me-label">Skills</span>
+            <span class="about-me-value">Ruby on Rails, GraphQL, Python, JavaScript, TypeScript, NodeJS, Express, MongoDB, Kafka, HTML, CSS, CI/CD, REST, Git</span>
+          </div>
+          <div class="about-me-detail">
+            <span class="about-me-label">Now Exploring</span>
+            <span class="about-me-value">Backend Development, Application Security</span>
+          </div>
+        </div> 
+        <div class="contact-bottom-buttons">
+          <button class="macos-btn" onclick="openMyProjectsWindow()">Projects</button>
+          <button class="macos-btn" onclick="openContactWindow()">Contact Me</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cyber Sec Terminal window -->
+    <div id="cli-window" class="cli-window" style="display:none;">
+      <div class="cli-window-header">
+        <div class="cli-window-controls">
+          <div class="cli-window-control close" onclick="closeCliWindow()"></div>
+          <div class="cli-window-control minimize"></div>
+          <div class="cli-window-control maximize"></div>
+        </div>
+        <span class="cli-window-title">EpiXCoder — -zsh — 80x24</span>
+      </div>
+      <div class="cli-container">
+        <div id="typed-message" class="typed-message"></div>
+        <div class="user-input" style="display:none;">
+          <input type="text" id="cli-input">
+        </div>
+      </div>
+  </div>
+
+  
+    <script src="script.js"></script>
+</body>
+</html>
+
