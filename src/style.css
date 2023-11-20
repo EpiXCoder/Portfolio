@@ -1,0 +1,238 @@
+
+@font-face {
+    font-family: SFPro;
+    src: url(fonts/SF-Pro.ttf);
+  }
+
+/* Base z-index for all app windows */
+.app-window {
+    z-index: 1000; 
+  }
+  
+  /* Additional z-index for active window to ensure it's on top */
+  .app-window-active {
+    z-index: 1001; 
+  }
+
+  /* Dark mode styles */
+body.dark-mode {
+    background-image: url('images/dark-desktop2.png'); /* Update with your dark mode wallpaper path */
+    color: white; /* Set text color to white */
+  }
+  
+  body.dark-mode .app-window {
+    background-color: #000; /* Set app window background to black */
+    color: white; /* Set app window text to white */
+  }
+  
+  /* You may also need to adjust link colors and other elements */
+  body.dark-mode a,
+  body.dark-mode .desktop-icon span,
+  body.dark-mode .app-window-title,
+  body.dark-mode .about-me-window-title,
+  body.dark-mode .contact-window-title {
+    color: white; /* Set text color to white for specific elements */
+  }
+  
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('https://dynamicwallpaper.club/landing-vids/poster.jpg'); /* Add your desktop wallpaper here */
+    background-size: cover;
+    font-family: SFPro;
+    font-size: 14px;
+}
+
+#desktop {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    height: 80%;
+    padding: 20px;
+    position: relative; 
+}
+
+.desktop-icon,
+.dock-icon {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  color: #fff; /* White text */
+}
+
+.desktop-icon img,
+.dock-icon img {
+  width: 60px; 
+  height: 60px;
+  border-radius: 20%;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.desktop-icon span,
+.dock-icon span {
+  display: block; /* Ensure the text appears below the icon */
+  margin-top: 8px; /* Space between icon and text */
+}
+
+a {
+    text-decoration: none;
+  }
+
+.desktop-icon-group {
+    display: flex;
+    flex-direction: column;
+    justify-self:left;
+    align-items: center; /* Center icons horizontally */
+    height: 90%; /* Set to the height of the container or the height you want */
+    padding-top: 30px; /* Optional: Adds space inside the container */
+    margin-bottom: 50px;
+    /* flex-wrap: wrap; 
+    align-content: flex-start;  */
+}
+
+#dock {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    /* Additional styles for your dock */
+}
+
+.dock-icon {
+    text-decoration: none;
+    margin: 0 10px;
+    color: black;
+    /* Additional styles for your dock icons */
+}
+
+#top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.apple-logo {
+    height: 15px;
+    margin-right: 10px;
+    /* padding-top: 5px; */
+}
+
+.left-section {
+    display: flex;
+}
+
+.right-section {
+    display: flex;
+}
+
+
+.finder {
+    margin-right: 20px;
+    /* Additional styles for Finder and dropdowns */
+    font-weight: bold;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 15px;
+    margin-right: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    /* bottom: 4px; */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #21f341;
+    box-shadow: 0 0 8px rgba(33, 243, 65, 0.8); /* Green glow */
+}
+
+input:checked + .slider:before {
+    transform: translateX(10px);
+}
+
+.date-time {
+    margin-right: 20px;
+}
+
+#weather-widget {
+    position: absolute;
+    top: 5%; /* Adjust as needed */
+    right: 2%; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    align-items: start;
+    width: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: SFPro;
+}
+
+#weather-icon {
+    width: 50px; 
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+#city-name{
+    /* font-weight: bolder; */
+    font-size: 14px;
+}
+
+#temperature{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 5px;
+}

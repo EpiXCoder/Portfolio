@@ -1,0 +1,150 @@
+/* Base z-index for all app windows */
+.app-window {
+  z-index: 1000; 
+}
+
+/* Additional z-index for active window to ensure it's on top */
+.app-window-active {
+  z-index: 1001; 
+}
+
+/* General styling for the application window */
+.my-projects-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%; /* Adjust based on your preference */
+    height: 70%; /* Adjust based on your preference */
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+  
+  /* Styling for the window header resembling macOS */
+  .my-projects-window-header {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-user-select: none; /* macOS style non-selectable text */
+    user-select: none;
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* macOS style window controls (close, minimize, maximize) */
+  .my-projects-window-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+  }
+  
+  .my-projects-window-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: #ff5f56;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .my-projects-window-control.minimize {
+    background-color: #ffbd2e;
+  }
+  
+  .my-projects-window-control.maximize {
+    background-color: #27c93f;
+  }
+  
+  /* Title of the application window */
+  .my-projects-window-title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* Styling for the content area of the application window */
+.my-projects-window-content {
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    height: calc(100% - 60px); /* Adjust height to account for header and potential footer */
+    /* background: #fff;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+   }
+  
+  /* Additional styling for the close button specifically */
+  .my-projects-window-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px; /* Larger size for the close button */
+    color: #aaa; /* Grey color for the close button */
+  }
+  
+  /* Styling for the close button on hover */
+  .my-projects-window-close-btn:hover {
+    color: #000; /* Darker color on hover */
+  }
+  
+  /* Ensure the window and controls are above other content */
+  .my-projects-window, .my-projects-window-control {
+    z-index: 1000;
+  }
+  
+  /* Hide the window by default */
+  .my-projects-window {
+    display: none;
+  }
+  
+  /* Show the window when it's open */
+  .my-projects-window-open {
+    display: block;
+  }
+  
+  /* Style for the close button */
+.my-projects-window-control.close {
+    background-color: #ff5f56; /* red circle for close */
+    position: relative; /* To position the 'x' correctly */
+  }
+  
+  /* Hide the 'x' text by default */
+  .my-projects-window-control.close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    color: rgb(49, 48, 48);
+    font-size: 12px;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  /* Show the 'x' text on hover */
+  .my-projects-window-control.close:hover::before {
+    content: '×'; 
+    opacity: 1;
+  }
+
+  .construction-icon {
+    width: 150px; 
+    height: 150px;
+    border-radius: 20%;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
